@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Charlene & Gabby's Smoothies and Treats</title>
+
+  <!-- CSS styling -->
+  <style>
+    button {
+      background-color: magenta;
+      color: gold;
+      padding: 15px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border: none;
+    }
+    title {
+      font-family: "Times New Roman", Times, Georgia, Garamond, serif"
+    }
+
+  body {
+  background-image: url("images/smoothie-bliss.jpg");
+}
+  </style>
+
+  <!-- JavaScript behavior -->
+  <script>
+    function addIngredient(imageName) {
+      const container = document.getElementById("ingredients-container");
+      const img = document.createElement("img");
+      img.src = `images/${imageName}`;
+      img.classList.add("ingredient");
+      container.appendChild(img);
+    }
+
+    function blendSmoothie() {
+      alert("Blending smoothie... 🍓🥤");
+      // Later we'll add animation here
+    }
+
+    function goToCustomizePage() {
+      window.location.href = "customize.html"; // This must be a real page
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Charlene & Gabby's Smoothies and Treats</h1>
+  <img src="images/CGlogo.png" alt="Charlene & Gabby's Logo" width="300">
+
+
+  <h2>Aloha for choosing our smoothies customized your way</h2>
+  <p>🌞 Welcome to our woman-led, Black-owned business blending up tropical smoothies, cookies, and love!</p>
+
+  <!-- Button to go to customization page -->
+  <button onclick="goToCustomizePage()">Customize Your Smoothie</button>
+
+  <!-- Smoothie cup and ingredients area -->
+  <div id="smoothie-cup">
+    <img src="images/cup.png" alt="Smoothie Cup">
+    <div id="ingredients-container"></div>
+  </div>
+
+  <!-- Ingredient List -->
+  <ul id="ingredient-list">
+    <li onclick="addIngredient('banana.png')">🍌 Banana</li>
+    <li onclick="addIngredient('strawberry.png')">🍓 Strawberry</li>
+  </ul>
+
+  <button onclick="blendSmoothie()">Add to Cart</button>
+</body>
+</html>
